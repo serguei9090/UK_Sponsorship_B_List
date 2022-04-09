@@ -1,5 +1,11 @@
-// Get code from "js-csv-table-from-file-api-papaparse" project and modified it to my project
 
+
+
+// let DB = "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1067671/2022-04-08_-_Worker_and_Temporary_Worker.csv"
+
+
+// Get code from "js-csv-table-from-file-api-papaparse" project and modified it to my project
+// CSV Local File to Variable
 const readSingleFile = () => {
     const fileInput = document.getElementById("csv-file");
     // const form = document.getElementById("controls-form");
@@ -9,6 +15,7 @@ const readSingleFile = () => {
     } else {
         parseCSV(fileInput.files[0]);
     }
+    
 };
 
 const parseCSV = file => {
@@ -34,7 +41,7 @@ const parseCSV = file => {
         buildTable(headersArray, rows);
         },
         error: error => alert(error),
-        download: false,
+        download: true,
         skipEmptyLines: false,
         chunk: undefined,
         fastMode: undefined,

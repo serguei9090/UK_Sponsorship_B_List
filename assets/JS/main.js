@@ -1,22 +1,47 @@
+// ====== Set default url for csv =====
+var default_url= "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1067671/2022-04-08_-_Worker_and_Temporary_Worker.csv"
 
+// ======= function to get file extension from url ========
+function get_url_extension( url ) {
+    return url.split(/[#?]/)[0].split('.').pop().trim();
+}
 
+// ======== On page Load set default value and parse with papaparse=======
+$(window).on('load', function() {
+    $("#csv_file").val(default_url);
+    // code here
+    readSingleFile();
+});
 
-// let DB = "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1067671/2022-04-08_-_Worker_and_Temporary_Worker.csv"
+// Add Listener to input on change
+const selectElement = document.getElementById('csv_file');
+selectElement.addEventListener('change', function() {
+    readSingleFile();
+});
 
-
-// Get code from "js-csv-table-from-file-api-papaparse" project and modified it to my project
-// CSV Local File to Variable
+// ======= Check Loaded file and alert if is not csv else start parseSCV =======
 const readSingleFile = () => {
-    const fileInput = document.getElementById("csv-file");
-    // const form = document.getElementById("controls-form");
-    if (fileInput.files[0].type !== "text/csv") {
+    const fileInput = $("#csv_file").val();
+    if (get_url_extension(fileInput) !== "csv") {
         alert("Not a CSV file");
-        form.reset();
     } else {
-        parseCSV(fileInput.files[0]);
+        parseCSV(fileInput);
     }
     
 };
+// Get code from "js-csv-table-from-file-api-papaparse" project and modified it to my project
+// CSV Local File to Variable
+// const readSingleFile = () => {
+//     const fileInput = document.getElementById("csv_file");
+//     // const form = document.getElementById("controls-form");
+//     if (fileInput.files[0].type !== "text/csv") {
+//         alert("Not a CSV file");
+//         form.reset();
+//     } else {
+//         parseCSV(fileInput.files[0]);
+//     }
+    
+// };
 
 const parseCSV = file => {
     // const hasHeader = document.getElementById("checkinput").checked;
@@ -100,15 +125,15 @@ const buildTable = (headersArray, rows) => {
 };
 
   // Some sweet event listeners!
-document.
-getElementById("csv-file").
-addEventListener("change", readSingleFile, false);
+// document.
+// getElementById("csv_file").
+// addEventListener("change", readSingleFile, true);
 
 
 
-/**
-     * Pagination and search
-     */
+// /**
+    //  * Pagination and search
+    //  */
         // Pagination
        
         $(document).ready(function() {
@@ -213,7 +238,7 @@ addEventListener("change", readSingleFile, false);
 //     // ...
 // }
 // $(document).ready(function(){
-//     $("#csv-file").change(handleFileSelect);
+//     $("#csv_file").change(handleFileSelect);
 
 // });
 
@@ -222,7 +247,7 @@ addEventListener("change", readSingleFile, false);
 //     console.log("test")
 // }
 
-// jQuery("input#csv-file").change(function () {
+// jQuery("input#csv_file").change(function () {
 //     console.log(file);
 // });
 

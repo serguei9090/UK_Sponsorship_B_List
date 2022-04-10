@@ -132,7 +132,7 @@ function mifuncion() {
     $(function () {
 
         var flexiblePagination = $('#csv-table__body').flexiblePagination({
-            itemsPerPage: 12,
+            itemsPerPage: 50,
             itemSelector: '.result:visible',
             pagingControlsContainer: '#pagingControls',
             itemsPerPageSelector: ".itemPerPageDropDown",
@@ -158,3 +158,26 @@ function mifuncion() {
     });
 
 };
+
+
+// ====== link animation======
+$("#l_about").click(function() {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#About").offset().top
+    }, 2000);
+
+});
+
+$("#l_contact").click(function() {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#Contact").offset().top
+    }, 2000);
+});
+
+$("#l_home").click(function() {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("body").offset().top
+    }, 800);
+});
+
+// $("#About").animate({scrollTop:2000}, "smooth");

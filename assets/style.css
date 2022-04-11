@@ -128,7 +128,14 @@ body {
 
 .table-striped>tbody>tr:nth-of-type(odd)>* {
     --bs-table-accent-bg: #2c8bde!important;
-    color: var(--bs-table-striped-color);
+}
+.table-striped>tbody>tr:nth-of-type(even)>* {
+    /* --bs-table-accent-bg: #2c8bde!important; */
+    color: var(--bs-light-rgb)!important;
+}
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+    color:var(--bs-white-rgb)!important;
 }
 
 

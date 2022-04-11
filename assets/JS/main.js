@@ -133,12 +133,12 @@ function mifuncion() {
 
 
             css: {
-                btnNumberingClass: 'btn btn-outline-primary',
-                btnActiveClass: "btn btn-primary",
-                btnFirstClass: 'btn btn-outline-primary',
-                btnLastClass: 'btn btn-outline-primary',
-                btnNextClass: 'btn btn-outline-primary',
-                btnPreviousClass: 'btn btn-outline-primary',
+                btnNumberingClass: 'btn btn-outline-primary pagingControls',
+                btnActiveClass: "btn btn-primary act_pagingControls",
+                btnFirstClass: 'btn btn-outline-primary pagingControls',
+                btnLastClass: 'btn btn-outline-primary pagingControls',
+                btnNextClass: 'btn btn-outline-primary pagingControls',
+                btnPreviousClass: 'btn btn-outline-primary pagingControls',
             }
         });
 

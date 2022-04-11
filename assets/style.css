@@ -138,7 +138,16 @@ body {
     color:var(--bs-white-rgb)!important;
 }
 
-
+/* Pagination bar */
+.act_pagingControls{
+    background-color: #1d70b8!important;
+}
+.pagingControls{
+    border:0.5px solid #1d70b8!important;
+}
+.pagingControls:hover{
+    background-color: #2c8bde!important;
+}
 /* Footer */
 .contact{
     background-color: #0b0c0c;

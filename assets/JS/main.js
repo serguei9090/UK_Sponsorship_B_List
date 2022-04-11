@@ -10,7 +10,7 @@ function get_url_extension(url) {
 $(window).on('load', function () {
     $("#csv_file").val(default_url);
     // code here
-    readSingleFile();
+    // readSingleFile();
 });
 
 // Add Listener to input on change
@@ -111,13 +111,6 @@ const buildTable = (headersArray, rows) => {
 
     console.log('rendering finished');
 };
-
-// Some sweet event listeners!
-// document.
-// getElementById("csv_file").
-// addEventListener("change", readSingleFile, true);
-
-
 
 // /**
 //  * Pagination and search

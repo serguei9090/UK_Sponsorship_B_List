@@ -1,6 +1,16 @@
 // ====== Set default url for csv =====
 var default_url = "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1067671/2022-04-08_-_Worker_and_Temporary_Worker.csv"
 
+// ======= Animation control Function=======
+function running(){
+    $(".spinner-item").removeClass("paused")
+    $(".spinner-item").addClass("running")
+}
+function paused(){
+    $(".spinner-item").removeClass("running")
+    $(".spinner-item").addClass("paused")
+    
+}
 // ======= function to get file extension from url ========
 function get_url_extension(url) {
     return url.split(/[#?]/)[0].split('.').pop().trim();
@@ -25,6 +35,7 @@ const readSingleFile = () => {
     if (get_url_extension(fileInput) !== "csv") {
         alert("Not a CSV file");
     } else {
+        running()
         parseCSV(fileInput);
     }
 
@@ -33,6 +44,7 @@ const readSingleFile = () => {
 
 const parseCSV = file => {
     // const hasHeader = document.getElementById("checkinput").checked;
+    
     const config = {
         delimiter: "", // auto-detect
         newline: "", // auto-detect
@@ -110,6 +122,7 @@ const buildTable = (headersArray, rows) => {
     });
 
     console.log('rendering finished');
+    paused()
 };
 
 // /**
